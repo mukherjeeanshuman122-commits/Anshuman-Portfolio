@@ -21,7 +21,8 @@
 }
 
 html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(139,32,32,0.4) transparent; }
-body { background: #0A0A0A; color: rgba(255,255,255,0.9); font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { background: #0A0A0A; color: rgba(255,255,255,0.9); font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace; overflow-x: hidden; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+canvas { touch-action: none; }
 ::selection { background: rgba(139,32,32,0.5); color: #E8E4D9; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
