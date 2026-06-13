@@ -1,11 +1,16 @@
 import { useState, useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import emailjs from '@emailjs/browser'
 import { personalInfo } from '../../data/portfolio'
 import GlowCard from '../ui/GlowCard'
 import MagneticButton from '../ui/MagneticButton'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const EMAILJS_SERVICE_ID = 'service_tf0o23b'
+const EMAILJS_TEMPLATE_ID = 'template_a23ltft'
+const EMAILJS_PUBLIC_KEY = 'DMmlvkuW3SBBJVFt6'
 
 function FormField({ label, name, type = 'text', value, onChange, placeholder, required = true, rows }) {
   const [focused, setFocused] = useState(false)
@@ -28,10 +33,34 @@ export default function Contact() {
   const [copied, setCopied] = useState(false)
   const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
   const sectionRef = useRef(null)
+  const formRef = useRef(null)
 
   const handleCopyEmail = () => { navigator.clipboard.writeText(personalInfo.email); setCopied(true); setTimeout(() => setCopied(false), 2000) }
-  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); window.open(`mailto:${personalInfo.email}?subject=${encodeURIComponent(formState.subject)}&body=${encodeURIComponent(`From: ${formState.name} (${formState.email})\n\n${formState.message}`)}`, '_blank'); setTimeout(() => setSubmitted(false), 3000) }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (sending) return
+    setSending(true)
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      )
+      setSubmitted(true)
+      setFormState({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setSubmitted(false), 4000)
+    } catch (err) {
+      console.error('Email send failed:', err)
+      alert('Failed to send message. Please try again or email directly.')
+    } finally {
+      setSending(false)
+    }
+  }
+
   const handleChange = (e) => setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
   useEffect(() => {
@@ -94,7 +123,7 @@ export default function Contact() {
           </div>
           <div className="lg:col-span-3 contact-right">
             <GlowCard className="p-6" style={{ background: 'rgba(18,18,18,0.95)', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <FormField label="Name" name="name" value={formState.name} onChange={handleChange} placeholder="John Doe" />
                   <FormField label="Email" name="email" type="email" value={formState.email} onChange={handleChange} placeholder="john@example.com" />
@@ -106,6 +135,10 @@ export default function Contact() {
                   {submitted ? (
                     <span className="flex items-center justify-center gap-2 relative z-10">
                       <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>Message Sent!
+                    </span>
+                  ) : sending ? (
+                    <span className="flex items-center justify-center gap-2 relative z-10">
+                      <span className="w-4 h-4 border-2 border-bone/30 border-t-bone rounded-full animate-spin" />Sending...
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2 relative z-10">
