@@ -139,7 +139,7 @@ export const projects = [
     type: 'frontend',
     description: 'A CLI-themed single-page portfolio built with vanilla HTML, CSS & JavaScript. No frameworks, just vibes.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Terminal UI'],
-    liveUrl: 'https://anshuman-portfolio-sandy.vercel.app/',
+    liveUrl: 'https://anshuman-portfolio-sable.vercel.app/',
     githubUrl: 'https://github.com/mukherjeeanshuman122-commits',
     image: null,
     problem: 'Standard portfolio templates lack personality and don\'t reflect developer identity.',
