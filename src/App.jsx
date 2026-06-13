@@ -6,7 +6,6 @@ import CustomCursor from './components/layout/CustomCursor'
 import TerminalIntro from './components/layout/TerminalIntro'
 import FloatingEvidence from './components/ui/FloatingEvidence'
 import CrimeSceneTape from './components/ui/CrimeSceneTape'
-import KnifeEffect from './components/ui/KnifeEffect'
 import Preloader from './components/ui/Preloader'
 import BloodSplatterTrail from './components/ui/BloodSplatterTrail'
 import Hero from './components/sections/Hero'
@@ -49,7 +48,6 @@ export default function App() {
             <div className="relative min-h-screen bg-bg text-white">
               <BackgroundSystem />
               <CustomCursor />
-              <KnifeEffect />
               <BloodSplatterTrail />
               <FloatingEvidence />
               <CrimeSceneTape />
