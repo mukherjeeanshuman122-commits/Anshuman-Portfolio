@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://anshuman-portfolio-sandy.vercel.app/sitemap.xml
+
+Sitemap: https://anshuman-portfolio-sable.vercel.app/sitemap.xml
