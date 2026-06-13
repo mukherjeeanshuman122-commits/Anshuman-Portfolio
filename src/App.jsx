@@ -46,7 +46,7 @@ export default function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative min-h-screen bg-bg text-white overflow-hidden">
+            <div className="relative min-h-screen bg-bg text-white">
               <BackgroundSystem />
               <CustomCursor />
               <KnifeEffect />
