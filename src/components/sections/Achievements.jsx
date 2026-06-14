@@ -8,12 +8,12 @@ import GlowCard from '../ui/GlowCard'
 gsap.registerPlugin(ScrollTrigger)
 
 const achievementList = [
-  { label: 'Projects Completed', target: achievements.projects, suffix: '+', icon: '🎯' },
-  { label: 'Technologies Mastered', target: achievements.technologies, suffix: '+', icon: '⚡' },
-  { label: 'Learning Hours', target: achievements.learningHours, suffix: '+', icon: '📚' },
-  { label: 'GitHub Contributions', target: achievements.githubActivity, suffix: '+', icon: '💻' },
-  { label: 'Client Projects', target: achievements.clientWork, suffix: '+', icon: '🤝' },
-  { label: 'Certifications', target: achievements.certifications, suffix: '+', icon: '🏆' },
+  { label: 'Projects Completed', target: achievements.projects, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg> },
+  { label: 'Technologies Mastered', target: achievements.technologies, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg> },
+  { label: 'Learning Hours', target: achievements.learningHours, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" /><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" /></svg> },
+  { label: 'GitHub Contributions', target: achievements.githubActivity, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg> },
+  { label: 'Client Projects', target: achievements.clientWork, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg> },
+  { label: 'Certifications', target: achievements.certifications, suffix: '+', svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-7 h-7"><circle cx="12" cy="8" r="7" /><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" /></svg> },
 ]
 
 function CircularProgress({ value, max, size = 100, strokeWidth = 3 }) {
@@ -82,7 +82,7 @@ export default function Achievements() {
               <GlowCard tilt className="glass rounded-2xl p-6 text-center group card-hover">
                 <div className="relative inline-flex items-center justify-center mb-4">
                   <CircularProgress value={item.target} max={item.target * 1.2} size={80} strokeWidth={3} />
-                  <div className="absolute inset-0 flex items-center justify-center"><span className="text-2xl">{item.icon}</span></div>
+                  <div className="absolute inset-0 flex items-center justify-center text-blood/60">{item.svg}</div>
                 </div>
                 <AnimatedCounter target={item.target} suffix={item.suffix} className="text-3xl sm:text-4xl font-bold font-mono text-white/80" />
                 <p className="text-xs text-white/35 mt-2 font-mono">{item.label}</p>
