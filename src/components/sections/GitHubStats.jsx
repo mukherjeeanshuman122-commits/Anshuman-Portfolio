@@ -36,10 +36,10 @@ export default function GitHubStats() {
   }, [])
 
   const statItems = stats ? [
-    { label: 'Public Repos', value: stats.public_repos || 0, icon: '📁' },
-    { label: 'Followers', value: stats.followers || 0, icon: '👥' },
-    { label: 'Following', value: stats.following || 0, icon: '🔗' },
-    { label: 'Gists', value: stats.public_gists || 0, icon: '📝' },
+    { label: 'Public Repos', value: stats.public_repos || 0, svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 mx-auto"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg> },
+    { label: 'Followers', value: stats.followers || 0, svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 mx-auto"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg> },
+    { label: 'Following', value: stats.following || 0, svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 mx-auto"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" /></svg> },
+    { label: 'Gists', value: stats.public_gists || 0, svg: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 mx-auto"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg> },
   ] : []
 
   return (
@@ -75,7 +75,7 @@ export default function GitHubStats() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 {statItems.map((item) => (
                   <div key={item.label} className="text-center group">
-                    <div className="text-2xl mb-1">{item.icon}</div>
+                    <div className="text-blood/60 group-hover:text-bone/60 mb-1 transition-colors">{item.svg}</div>
                     <div className="text-2xl font-bold text-white/80 group-hover:text-bone transition-colors">{item.value}</div>
                     <div className="text-[10px] text-white/35 font-mono uppercase tracking-wider mt-1">{item.label}</div>
                   </div>
