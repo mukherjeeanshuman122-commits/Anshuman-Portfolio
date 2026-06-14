@@ -26,6 +26,15 @@ import LighthouseBadge from './components/sections/LighthouseBadge'
 import BuiltWith from './components/sections/BuiltWith'
 import EvidenceBoard from './components/sections/EvidenceBoard'
 
+function Divider() {
+  return (
+    <div className="relative h-20 flex items-center justify-center">
+      <div className="w-48 h-[1px] bg-gradient-to-r from-transparent via-blood/25 to-transparent" />
+      <div className="absolute w-1.5 h-1.5 bg-blood/30 rounded-full" style={{ boxShadow: '0 0 12px rgba(139,32,32,0.3)' }} />
+    </div>
+  )
+}
+
 export default function App() {
   const [preloaderDone, setPreloaderDone] = useState(false)
   const [introDone, setIntroDone] = useState(false)
@@ -55,20 +64,34 @@ export default function App() {
 
               <main className="relative z-10">
                 <Hero />
+                <Divider />
                 <About />
+                <Divider />
                 <TypewriterTerminal />
                 <FingerprintScan />
+                <Divider />
                 <TechOrbit />
+                <Divider />
                 <Skills />
+                <Divider />
                 <Projects />
+                <Divider />
                 <EvidenceBoard />
+                <Divider />
                 <Experience />
+                <Divider />
                 <Achievements />
+                <Divider />
                 <GitHubSection />
+                <Divider />
                 <GitHubStats />
+                <Divider />
                 <LighthouseBadge />
+                <Divider />
                 <BuiltWith />
+                <Divider />
                 <Blog />
+                <Divider />
                 <Contact />
               </main>
 
