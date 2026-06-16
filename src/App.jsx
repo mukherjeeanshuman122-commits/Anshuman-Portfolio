@@ -18,6 +18,7 @@ import Achievements from './components/sections/Achievements'
 import GitHubSection from './components/sections/GitHubSection'
 import GitHubStats from './components/sections/GitHubStats'
 import Blog from './components/sections/Blog'
+import Pricing from './components/sections/Pricing'
 import Contact from './components/sections/Contact'
 import Footer from './components/layout/Footer'
 import TypewriterTerminal from './components/ui/TypewriterTerminal'
@@ -91,6 +92,8 @@ export default function App() {
                 <BuiltWith />
                 <Divider />
                 <Blog />
+                <Divider />
+                <Pricing />
                 <Divider />
                 <Contact />
               </main>
