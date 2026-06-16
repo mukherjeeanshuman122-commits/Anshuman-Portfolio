@@ -351,7 +351,7 @@ export default function Contact() {
             <div className="liquid-glass rounded-2xl p-6 space-y-6">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-2.5 h-2.5 bg-green-500/70 rounded-full" style={{ animation: 'glowPulse 2s ease-in-out infinite' }} />
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full" style={{ boxShadow: '0 0 8px rgba(34,197,94,0.6), 0 0 20px rgba(34,197,94,0.3)', animation: 'glowPulse 2s ease-in-out infinite' }} />
                   <div className="absolute -inset-1.5 border border-green-500/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
                 </div>
                 <div>
