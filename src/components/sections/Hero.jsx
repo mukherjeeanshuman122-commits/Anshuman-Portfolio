@@ -39,10 +39,10 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-bone/80 mb-8 font-mono"
-              style={{ background: 'rgba(20,20,20,0.9)', border: '1px solid rgba(139,32,32,0.15)' }}>
+              style={{ background: 'rgba(20,20,20,0.9)', border: '1px solid rgba(34,197,94,0.15)' }}>
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-bone/30 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 bg-bone/60" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" style={{ boxShadow: '0 0 8px rgba(34,197,94,0.6), 0 0 20px rgba(34,197,94,0.3)' }} />
               </span>
               {personalInfo.availability}
             </div>
