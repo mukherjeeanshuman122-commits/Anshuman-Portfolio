@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import BackgroundSystem from './components/layout/Background'
 import Navigation from './components/layout/Navigation'
 import CustomCursor from './components/layout/CustomCursor'
@@ -100,6 +101,7 @@ export default function App() {
 
               <Footer />
             </div>
+            <SpeedInsights />
           </motion.div>
         )}
       </AnimatePresence>
