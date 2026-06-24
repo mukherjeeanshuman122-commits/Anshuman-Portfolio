@@ -121,7 +121,7 @@ export const projects = [
     type: 'fullstack',
     description: 'A real-time web application with Firebase integration, featuring authentication, Firestore data sync, and responsive UI.',
     tags: ['Node.js', 'Firebase', 'HTML/CSS', 'JavaScript'],
-    liveUrl: 'https://afits-quick-d05b9.web.app/',
+    liveUrl: 'https://afits-quick.vercel.app/',
     githubUrl: 'https://github.com/mukherjeeanshuman122-commits',
     image: null,
     problem: 'Need for a real-time collaborative application with user authentication and data persistence.',
