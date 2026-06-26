@@ -103,7 +103,7 @@ export const projects = [
     type: 'advanced',
     description: 'A comprehensive passport photo application with automatic cropping, background handling, and print-ready output.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Canvas API'],
-    liveUrl: 'https://passportpmfree.netlify.app/',
+    liveUrl: 'https://passportphoto-maker.vercel.app/',
     githubUrl: null,
     image: null,
     problem: 'Creating passport photos manually is time-consuming and requires expensive software.',
